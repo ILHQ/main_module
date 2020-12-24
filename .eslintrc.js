@@ -1,28 +1,33 @@
 module.exports = {
   root: true,
+  // parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: 'babel-eslint'
+  },
   env: {
+    browser: true,
     node: true
   },
   extends: [
     'plugin:vue/essential',
     '@vue/standard'
   ],
-  parserOptions: {
-    parser: 'babel-eslint'
-  },
+  plugins: [
+    'html',
+    'vue',
+    'standard'
+  ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
-  },
-  overrides: [
-    {
-      files: [
-        '**/__tests__/*.{j,t}s?(x)',
-        '**/tests/unit/**/*.spec.{j,t}s?(x)'
-      ],
-      env: {
-        jest: true
-      }
-    }
-  ]
-}
+    'arrow-parens': 0,
+    'generator-star-spacing': 0,
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'indent': 0,
+    'no-tabs': 0,
+    'space-before-function-paren': 0,
+    'semi': [2, 'always'],
+    'eol-last': 0,
+    'no-undef': 0,
+    'no-unused-vars': 0,
+    'prefer-const': 0
+  }
+};
